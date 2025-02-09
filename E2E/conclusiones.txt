@@ -1,0 +1,41 @@
+Conclusiones del Ejercicio de Prueba E2E en SauceDemo
+En este archivo contiene las conclusiones obtenidas después de realizar las pruebas E2E en el flujo de compra de la página SauceDemo. A continuación, se detallan los hallazgos, los problemas encontrados, las soluciones implementadas y las conclusiones finales.
+
+Resumen de la Prueba E2E
+
+La prueba funcional automatizada consistió en simular un flujo completo de compra en la plataforma SauceDemo. Los pasos cubiertos en la prueba fueron los siguientes:
+
+1. Autenticación:
+-Usuario: standard_user
+-Contraseña: secret_sauce
+2. Agregar Productos al Carrito:
+-Se agregaron dos productos al carrito.
+3. Visualización del Carrito:
+- Se verificó que los productos fueran correctamente agregados.
+4. Formulario de Compra:
+- Se completaron los datos del formulario de compra.
+5. Finalización de la Compra:
+- El proceso de pago fue completado con éxito.
+6. Confirmación:
+- Se verificó que la confirmación "THANK YOU FOR YOUR ORDER" se mostró en la página.
+
+Hallazgos Durante la Ejecución de la Prueba
+1. Autenticación Exitosa
+La autenticación con las credenciales standard_user y secret_sauce fue exitosa sin inconvenientes. La página se cargó correctamente y el flujo continuó sin interrupciones.
+2. Agregar Productos al Carrito
+Los productos fueron correctamente agregados al carrito utilizando los botones de añadir productos. No hubo problemas con la interacción de los botones ni con la actualización del carrito.
+Observación: Se verificó que la cantidad de productos en el carrito se actualizara correctamente cada vez que se añadía un artículo.
+3. Visualización del Carrito
+La visualización del carrito funcionó sin problemas, mostrando los productos correctamente.
+Observación: El total de los productos fue calculado correctamente.
+4. Formulario de Compra
+El formulario de compra fue completado exitosamente. Se ingresaron los datos necesarios (nombre, dirección, ciudad, etc.) y el botón de "Finish" se activó correctamente.
+Problema: En algunos casos, si los campos de entrada no eran llenados correctamente, la prueba no se detenía a esperar el siguiente paso. Este comportamiento fue corregido agregando más validaciones de campo en el código.
+5. Finalización de la Compra
+El flujo de compra se completó exitosamente después de hacer clic en el botón de "Finish". La página se redirigió correctamente a la pantalla de confirmación.
+6. Confirmación "THANK YOU FOR YOUR ORDER"
+El mensaje de confirmación "THANK YOU FOR YOUR ORDER" fue correctamente detectado por la prueba automatizada. Se validó su visibilidad usando cy.contains() en Cypress.
+Problema: Hubo un pequeño retraso en la carga de la página de confirmación en algunas ejecuciones. Se solucionó implementando un tiempo de espera explícito en el código de prueba utilizando cy.wait() para asegurar que el elemento de confirmación estuviera visible antes de realizar la validación.
+
+Próximos Pasos
+Se podrían agregar pruebas adicionales, como la verificación de que los productos están correctamente reflejados en la página de pago y que los datos de los usuarios se completan correctamente en el formulario.

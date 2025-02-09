@@ -23,7 +23,7 @@ describe('Flujo de compra en Saucedemo', () => {
     cy.get('[data-test="finish"]').click();
 
     // Esperar un poco (ajusta el tiempo si es necesario)
-    cy.wait(2000); // Esperar 2 segundos para dar tiempo al mensaje
+    // cy.wait(2000); // Esperar 2 segundos para dar tiempo al mensaje
 
     cy.get('.complete-header').should('contain', 'Thank you for your order!').should('be.visible');
   });
