@@ -1,0 +1,25 @@
+Conclusiones del ejercicio: Pruebas de API de Signup y Login
+
+El ejercicio consistió en la implementación de pruebas para la API de DemoBlaze, específicamente en los endpoints de signup y login. Se utilizaron pruebas automatizadas mediante Cypress.
+
+Casos de prueba ejecutados:
+
+1. Crear un nuevo usuario en Signup
+Se envió una solicitud POST al endpoint signup para crear un nuevo usuario con un nombre de usuario y una contraseña específicos.
+La prueba fue exitosa. La respuesta de la API fue un mensaje con la propiedad messagecon el valor "Account created successfully".
+
+2. Intentar crear un usuario que ya existe en Signup
+Se envió una solicitud POST al endpoint signup para crear un usuario con el mismo nombre de usuario que se había creado previamente en la prueba anterior.
+La prueba fue exitosa. La API respondió con un mensaje en la propiedad errorMessage, indicando que el usuario ya existe ("This user already exist."). 
+
+3. Login con usuario y contraseña correctos
+Se envió una solicitud POST al endpoint login con el nombre de usuario y la contraseña correctos, previamente registrados en el paso anterior.
+La prueba fue exitosa. La respuesta de la API contenía la propiedad message con el valor "Login success".
+
+4. Login con usuario y contraseña incorrectos
+Se envió una solicitud POST al endpoint login con un nombre de usuario y una contraseña incorrectos.
+La prueba fue exitosa. La respuesta de la API contenía la propiedad errorMessage con el valor "Wrong password.".
+
+5. Login con usuario inexistente
+Se envió una solicitud POST al endpoint login con un nombre de usuario que no existe en el sistema.
+La prueba fue exitosa. La respuesta de la API contenía la propiedad errorMessage con el valor "User does not exist.".
