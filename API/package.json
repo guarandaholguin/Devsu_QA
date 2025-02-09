@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API Framework Testing Cypress ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "API",
+    "Framework",
+    "Testing",
+    "Cypress"
+  ],
+  "author": "EduardoHolguin",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.0.2"
+  }
+}

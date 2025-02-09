@@ -1,0 +1,21 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "E2E Framework Testing Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "E2E",
+    "Framework",
+    "Testing",
+    "Crypress"
+  ],
+  "author": "EduardoHolguin",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.0.2"
+  }
+}
